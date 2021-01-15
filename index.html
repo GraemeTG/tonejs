@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Tone.js</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <button id="play-button">Hello Tone.js</button>
+
+    <script src="./node_modules/tone/build/Tone.js"></script>
+    <script>
+        let synth = new Tone.Synth().toMaster();
+
+        const playButton = document.getElementById("play-button");
+
+        playButton.addEventListener('click', () => {
+            synth.triggerAttackRelease('A3', '4n');
+        });
+    </script>
+</body>
+</html>
